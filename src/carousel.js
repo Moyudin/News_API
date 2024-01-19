@@ -3,12 +3,13 @@ import { Carousel, Image } from "react-bootstrap";
 import noimage from "./assets/noimagei.jpg";
 import axios from "axios";
 
+var apiKey = process.env.REACT_APP_API_KEY;
 
 function Carsousel(){
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=7d348e1b5af7433a9a673e8877747e07')
+        axios.get(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${apiKey}`)
         .then(response => {
             setData(response.data.articles);
             console.log(response.data);
