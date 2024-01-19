@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+body {
+  background-color: rgb(0, 0, 0);
+}
+.h1-head{
+  font-family: 'Lemon', serif;
+}
+@media screen and (max-width:410px){
+  .h1-text{
+    font-size: 20px;
+  }
+  input{
+   width: 100px; 
+  }
+}
+.custom-input {
+  border: 1px solid #08CAF0;
+  color: #08CAF0;
+  padding: 5px;
+  background: transparent;
+}
+
+.custom-input::placeholder {
+  color: #08CAF0;
+}
