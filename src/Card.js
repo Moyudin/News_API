@@ -15,7 +15,7 @@ function Cards({title,image,description,url}){
                  }
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
-                    <Card.Text>{(description).slice(0, 100)}...</Card.Text> 
+                    {description ? (<Card.Text>{description.slice(0, 50)}...</Card.Text>) : (<Card.Text className="text-danger">Sorry But there is no description about the news</Card.Text>)}               
                 </Card.Body>
                 <div className="text-center img-fluid mb-3">
                     <a href={url} className="btn w-50 rounded-pill border border-info text-warning">Show Details</a>
