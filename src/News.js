@@ -4,7 +4,7 @@ import Cards from "./Card";
 import { Container, Navbar, Row } from "react-bootstrap";
 import Carsousel from "./carousel";
 
-var apiKey = process.env.REACT_APP_API_KEY;
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function News(){
     const [data, setData] = useState([]);
@@ -47,7 +47,7 @@ function News(){
                     <h1 className="text-center text-white mt-lg-3 fs-2"><u>More Updates</u></h1>
                 </div>
                 {filteredData.map(item => (
-                <Cards title={item.title} image={item.urlToImage} description={item.description} url={item.url}/>
+                <Cards key={item.url} title={item.title} image={item.urlToImage} description={item.description} url={item.url}/>
                 ))}
             </Row>
         </Container>        

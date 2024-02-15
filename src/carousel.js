@@ -27,9 +27,9 @@ function Carsousel(){
         </div>
         <Carousel className="mt-3" >
             {slicedData.map((article) => (
-            <Carousel.Item className="border border-secondary text-center ">
+            <Carousel.Item key={article.url} className="border border-secondary text-center ">
                 <a href={article.url}>
-                    {article.urlToImage ? <Image className="img-fluid" alt={article.urlToImage} src={article.urlToImage}/> : <Image variant="top" className="card-images" src={noimage}/> }
+                    {article.urlToImage ? <Image className="img-fluid" alt={article.urlToImage} src={article.urlToImage}/> : <Image variant="top" className="card-images img-fluid" src={noimage}/> }
                     <Carousel.Caption>
                        {article.urlToImage ?  <h3 className="h1-text text">{article.title}</h3> :<h3 className="h1-text text-info">{article.title}</h3>}
                         <p className="d-none d-lg-block">{article.description}</p>
