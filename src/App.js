@@ -1,4 +1,4 @@
-import News from "./News.js"
+import News from "../src/pages/News.js"
 import './App.css';
 
 function App() {
