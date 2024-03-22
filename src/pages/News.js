@@ -9,11 +9,11 @@ function News() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const apiKey = process.env.REACT_APP_API_KEY;
+    // const apiKey = process.env.REACT_APP_API_KEY;
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${apiKey}`
+          `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=cf5b836d870045d5bfa632bef1c4125e`
         );
         setData(response.data.articles);
       } catch (error) {
