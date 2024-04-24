@@ -9,13 +9,14 @@ function News() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    // const apiKey = process.env.REACT_APP_API_KEY;
+    const apiKey = process.env.REACT_APP_API_KEY;
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=cf5b836d870045d5bfa632bef1c4125e`
+          `https://newsapi.org/v2/everything?q=tesla&from=2024-03-24&sortBy=publishedAt&apiKey=${apiKey}`
         );
         setData(response.data.articles);
+        console.log(response.data.articles);
       } catch (error) {
         console.error("Error fetching Products data: ", error);
       }
@@ -23,7 +24,7 @@ function News() {
     fetchData();
   }, []);
 
-  const slicedData = data.slice(11, 250);
+  const slicedData = data.slice(11, 8000);
 
   const filteredData = slicedData.filter((item) =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase())
