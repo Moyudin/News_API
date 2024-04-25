@@ -16,7 +16,6 @@ function News() {
           `${apiKey}`
         );
         setData(response.data.articles); // Assuming response.data is an object with an articles property
-        console.log(response.data.articles);
       } catch (error) {
         console.error("Error fetching Products data: ", error);
       }
