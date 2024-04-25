@@ -21,7 +21,7 @@ function Carsousel() {
     fetchData();
   }, []);
 
-  const slicedData = data.slice(0, 10);
+  const slicedData = data.slice(0, 5);
   return (
     <>
       <div className="text-center mt-5 pt-5">

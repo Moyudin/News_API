@@ -25,7 +25,7 @@ function News() {
   }, []);
 
   // Check if data is an array before calling slice
-  const slicedData = Array.isArray(data) ? data.slice(0, 100) : [];
+  const slicedData = Array.isArray(data) ? data.slice(6, 100) : [];
 
   const filteredData = slicedData.filter(
     (item) =>
