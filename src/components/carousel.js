@@ -11,7 +11,7 @@ function Carsousel() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${apiKey}`
+          `${apiKey}`
         );
         setData(response.data.articles);
       } catch (error) {

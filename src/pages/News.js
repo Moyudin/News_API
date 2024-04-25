@@ -9,10 +9,11 @@ function News() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
+    const apiKey = process.env.REACT_APP_API_KEY;
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://saurav.tech/NewsAPI/top-headlines/category/health/in.json`
+          `${apiKey}`
         );
         setData(response.data.articles); // Assuming response.data is an object with an articles property
         console.log(response.data.articles);
@@ -24,7 +25,7 @@ function News() {
   }, []);
 
   // Check if data is an array before calling slice
-  const slicedData = Array.isArray(data) ? data.slice(0, 10) : [];
+  const slicedData = Array.isArray(data) ? data.slice(0, 100) : [];
 
   const filteredData = slicedData.filter(
     (item) =>
