@@ -27,7 +27,7 @@ function Cards({ title, image, description, url }) {
             />
           )}
           <Card.Body>
-            <Card.Title>{title}</Card.Title>
+            <Card.Title className="text-danger">{title.slice(0,50)}...</Card.Title>
             {description ? (
               <Card.Text>{description.slice(0, 50)}...</Card.Text>
             ) : (
@@ -41,6 +41,8 @@ function Cards({ title, image, description, url }) {
               href={url}
               className="btn w-50 rounded-pill border border-info text-warning"
               style={{ fontSize: "12px" }}
+              target="_blank"
+              rel="noreferrer"
             >
               Show Details
             </a>

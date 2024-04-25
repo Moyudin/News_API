@@ -10,9 +10,7 @@ function Carsousel() {
     const apiKey = process.env.REACT_APP_API_KEY;
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `${apiKey}`
-        );
+        const response = await axios.get(`${apiKey}`);
         setData(response.data.articles);
       } catch (error) {
         console.error("Error fetching Products data: ", error);
@@ -33,18 +31,17 @@ function Carsousel() {
             key={article.url}
             className="border border-secondary text-center "
           >
-            <a href={article.url}>
+            <a href={article.url} target="_blank" rel="noreferrer">
               {article.urlToImage ? (
                 <Image
-                style={{height:"50vh"}}
+                  style={{ height: "50vh" }}
                   className="img-fluid"
                   alt={article.urlToImage}
                   src={article.urlToImage}
                 />
               ) : (
                 <Image
-                style={{height:"50vh"}}
-
+                  style={{ height: "50vh" }}
                   variant="top"
                   className="card-images img-fluid"
                   src={noimage}
