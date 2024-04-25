@@ -5,17 +5,16 @@ import { Container, Navbar, Row } from "react-bootstrap";
 import Carsousel from "../components/carousel.js";
 
 function News() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null); // Initialize with null
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const apiKey = process.env.REACT_APP_API_KEY;
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?q=tesla&from=2024-03-24&sortBy=publishedAt&apiKey=${apiKey}`
+          `https://saurav.tech/NewsAPI/top-headlines/category/health/in.json`
         );
-        setData(response.data.articles);
+        setData(response.data.articles); // Assuming response.data is an object with an articles property
         console.log(response.data.articles);
       } catch (error) {
         console.error("Error fetching Products data: ", error);
@@ -24,10 +23,12 @@ function News() {
     fetchData();
   }, []);
 
-  const slicedData = data.slice(11, 8000);
+  // Check if data is an array before calling slice
+  const slicedData = Array.isArray(data) ? data.slice(0, 10) : [];
 
-  const filteredData = slicedData.filter((item) =>
-    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredData = slicedData.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
