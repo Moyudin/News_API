@@ -51,12 +51,13 @@ function News() {
       </Navbar>
       <Container>
         <Row>
-          <Carsousel />
+          {/* Conditionally render the carousel based on searchQuery */}
+          {searchQuery === "" && <Carsousel />}
         </Row>
         <Row>
           <div className="py-3">
             <h1 className="text-center text-white mt-lg-3 fs-2">
-              <u>More Updates</u>
+              More Updates
             </h1>
           </div>
           {filteredData.map((item) => (

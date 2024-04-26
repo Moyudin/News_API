@@ -49,11 +49,10 @@ function Carsousel() {
               )}
               <Carousel.Caption>
                 {article.urlToImage ? (
-                  <h3 className="h1-text text">{article.title}</h3>
+                  <h3 className="h1-text ">{article.title}</h3>
                 ) : (
                   <h3 className="h1-text text-info">{article.title}</h3>
                 )}
-                <p className="d-none d-lg-block">{article.description}</p>
               </Carousel.Caption>
             </a>
           </Carousel.Item>
